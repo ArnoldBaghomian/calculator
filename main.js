@@ -34,56 +34,54 @@ function boxClicked(event){
       
      switch(input) {
       case '+':
-       console.log("its a addition!");
+       
          num1 = parseFloat(output.innerHTML);
-         console.log("this is number 1", num1);
+         
          output.innerHTML = '';
-         console.log("this is our operator input", input);
+        
          operator = input;
         break;
       case '-':
-        console.log('subtract')
+       
         num1 = parseFloat(output.innerHTML);
-         console.log("this is number 1", num1);
+         
          output.innerHTML = '';
          console.log("this is our operator input", input);
          operator = input;
         break;
       case 'X':
-       console.log('multiply')
+    
         num1 = parseFloat(output.innerHTML);
-         console.log("this is number 1", num1);
+       
          output.innerHTML = '';
-         console.log("this is our operator input", input);
+        
          operator = input;
         break;
      case '/':
-       console.log('divide')
+       
        num1 = parseFloat(output.innerHTML);
-         console.log("this is number 1", num1);
+      
          output.innerHTML = '';
-         console.log("this is our operator input", input);
+        
          operator = input;
         break;
      case ' % ':
-       console.log('percent')
+      
        output.innerHTML = (parseFloat(output.innerHTML)/100).toString();
         break;
      case '+/-':
-       console.log('flip')
+   
          num1 = -parseFloat(output.innerHTML);   
          output.innerHTML = -output.innerHTML;         
         break;
      case ' = ':
-       console.log('equals')
+      
        num2 = parseFloat(output.innerHTML);
-       console.log('this is num2',num2);
-       console.log('this is num1', num1);
-       console.log('this is our operator', operator)
+       
        resultTotal = compute(num1,num2,operator);
-       console.log("result from compute:",resultTotal);  
+       
        output.innerHTML = resultTotal;
-       console.log("output.innerHTML",output.innerHTML);
+       
 
        num1 = 0;
        num2 = 0;
@@ -91,7 +89,7 @@ function boxClicked(event){
 
         break;
       case '.':
-       console.log('decimal')
+       //console.log('decimal')
        
          
          if(output.innerHTML.indexOf('.') === -1 ){
@@ -101,7 +99,7 @@ function boxClicked(event){
 
         break;
       case 'AC':
-       console.log('erase')
+       //console.log('erase')
        num1 = 0;
        num2 = 0;
        resultTotal = 0;
@@ -109,7 +107,7 @@ function boxClicked(event){
        input.innerHTML = '';
         break;
         default:
-        console.log("its a number");
+        //console.log("its a number");
 
          if(startFlag === true){
            output.innerHTML = button.innerHTML;
@@ -132,49 +130,47 @@ function compute(number1,number2,operator){
 
 switch(operator) {
       case '+':
-       console.log("its a addition!");
+       //console.log("its a addition!");
        num1 + num2;
        result = num1 + num2;
     return result;      
       case '-':
-        console.log('subtract')
+       // console.log('subtract')
         result = num1 - num2;
         return result;
         break;
 
       case 'X':
-       console.log('multiply')
+      // console.log('multiply')
        result = num1 * num2;
         return result;
         break;
 
       case '/':
-       console.log('divide')
+       //console.log('divide')
         result = num1 / num2;
         return result;
         break;
       case ' % ':
-       console.log('percent')
+       //console.log('percent')
         break;
       case '+/-':
       
         break;
       case ' = ':
-       console.log('equals')
+       //console.log('equals')
        num2 = output.innerHTML;
-       console.log('this is num2',num2);
-       console.log('this is num1', num1);
-       console.log('this is our operator', operator)
+       
 
         break;
       case '.':
-       console.log('decimal')
+      // console.log('decimal')
         break;
       case 'AC':
-       console.log('erase')
+       //console.log('erase')
         break;
         default:
-        console.log("its a number");
+       // console.log("its a number");
         output.innerHTML = output.innerHTML + button.innerHTML;
         break;
 
