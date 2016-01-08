@@ -5,10 +5,11 @@ td{
 }
 
 #results{
-	background-color:white;
-	width:255px;
-	height:30px;
+	background-color:#FFEBCD;
+	width:400px;
+	height:50px;
 	text-align: right;
+	color: bold;
 
 }
 
@@ -16,4 +17,5 @@ td{
    background-color: orange;
 
 }
+
 

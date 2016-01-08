@@ -3,6 +3,7 @@ var num1 = 0;
 var num2 = 0;
 var operator ='';
 var resultTotal =0;
+var startFlag = true;
 
 
 
@@ -20,77 +21,62 @@ function boxClicked(event){
 
 	console.log(event)
 
-	var button = event.target;
+	 var button = event.target;
 	
 
-	var input = button.innerHTML;
+	 var input = button.innerHTML;
 
-	var output = document.getElementById('results');
-
-     //console.log("type of results", typeof results.innerHTML);
-     //console.log("type of input", typeof button.innerHTML);
-
-     console.log(output);
+	 var output = document.getElementById('results');
 
 
-
-     
-
-    
-
-     var hasNumber = /\d/;
-
-     
+  console.log(output);
      
      	
      switch(input) {
-       case '+':
+      case '+':
        console.log("its a addition!");
-         num1 = parseInt(output.innerHTML);
+         num1 = parseFloat(output.innerHTML);
          console.log("this is number 1", num1);
          output.innerHTML = '';
          console.log("this is our operator input", input);
          operator = input;
         break;
-       case '-':
+      case '-':
         console.log('subtract')
-        num1 = parseInt(output.innerHTML);
+        num1 = parseFloat(output.innerHTML);
          console.log("this is number 1", num1);
          output.innerHTML = '';
          console.log("this is our operator input", input);
          operator = input;
         break;
-       case 'X':
+      case 'X':
        console.log('multiply')
-        num1 = parseInt(output.innerHTML);
+        num1 = parseFloat(output.innerHTML);
          console.log("this is number 1", num1);
          output.innerHTML = '';
          console.log("this is our operator input", input);
          operator = input;
         break;
-       case '/':
+     case '/':
        console.log('divide')
-       num1 = parseInt(output.innerHTML);
+       num1 = parseFloat(output.innerHTML);
          console.log("this is number 1", num1);
          output.innerHTML = '';
          console.log("this is our operator input", input);
          operator = input;
         break;
-       case ' % ':
+     case ' % ':
        console.log('percent')
+       output.innerHTML = (parseFloat(output.innerHTML)/100).toString();
         break;
-       case '+/-':
+     case '+/-':
        console.log('flip')
-         num1 = -parseInt(output.innerHTML);
-         //resultTotal = compute(num1,num2,operator); 
-         output.innerHTML = num1;
-         //operator = resultTotal;
-         
-        
+         num1 = -parseFloat(output.innerHTML);   
+         output.innerHTML = -output.innerHTML;         
         break;
-        case ' = ':
+     case ' = ':
        console.log('equals')
-       num2 = parseInt(output.innerHTML);
+       num2 = parseFloat(output.innerHTML);
        console.log('this is num2',num2);
        console.log('this is num1', num1);
        console.log('this is our operator', operator)
@@ -98,11 +84,23 @@ function boxClicked(event){
        console.log("result from compute:",resultTotal);  
        output.innerHTML = resultTotal;
        console.log("output.innerHTML",output.innerHTML);
+
+       num1 = 0;
+       num2 = 0;
+       startFlag = true;
+
         break;
-       case '.':
+      case '.':
        console.log('decimal')
+       
+         
+         if(output.innerHTML.indexOf('.') === -1 ){
+          output.innerHTML = output.innerHTML + '.';
+         }
+
+
         break;
-       case 'AC':
+      case 'AC':
        console.log('erase')
        num1 = 0;
        num2 = 0;
@@ -112,8 +110,16 @@ function boxClicked(event){
         break;
         default:
         console.log("its a number");
-        output.innerHTML = output.innerHTML + button.innerHTML;
-        break;
+
+         if(startFlag === true){
+           output.innerHTML = button.innerHTML;
+           startFlag = false;
+        }
+         else{
+           output.innerHTML = output.innerHTML + button.innerHTML;
+        }
+
+         break;
 
     
  }
@@ -125,36 +131,35 @@ function compute(number1,number2,operator){
 	var result = 0;
 
 switch(operator) {
-       case '+':
+      case '+':
        console.log("its a addition!");
        num1 + num2;
        result = num1 + num2;
  		return result;      
-       case '-':
+      case '-':
         console.log('subtract')
         result = num1 - num2;
         return result;
         break;
 
-       case 'X':
+      case 'X':
        console.log('multiply')
        result = num1 * num2;
         return result;
         break;
 
-       case '/':
+      case '/':
        console.log('divide')
         result = num1 / num2;
         return result;
         break;
-       case ' % ':
+      case ' % ':
        console.log('percent')
         break;
-       case '+/-':
-      // console.log('flip')
-       //result = -num1;
+      case '+/-':
+      
         break;
-        case ' = ':
+      case ' = ':
        console.log('equals')
        num2 = output.innerHTML;
        console.log('this is num2',num2);
@@ -162,10 +167,10 @@ switch(operator) {
        console.log('this is our operator', operator)
 
         break;
-       case '.':
+      case '.':
        console.log('decimal')
         break;
-       case 'AC':
+      case 'AC':
        console.log('erase')
         break;
         default:
@@ -176,8 +181,6 @@ switch(operator) {
     
  }
   
-
-
 
 }
      
