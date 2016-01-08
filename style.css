@@ -16,6 +16,11 @@ td{
 .button{
    background-color: orange;
 
+
+}
+
+.button:active{
+	background-color: white
 }
 
 

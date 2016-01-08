@@ -8,30 +8,30 @@ var startFlag = true;
 
 
 document.addEventListener('DOMContentLoaded', function(){
-	var x = document.getElementsByClassName('button');
+  var x = document.getElementsByClassName('button');
 
-	for(var i = 0; i < x.length; i++) {
-		x[i].addEventListener('click', boxClicked);
-	}
+  for(var i = 0; i < x.length; i++) {
+    x[i].addEventListener('click', boxClicked);
+  }
 
 });
 
 
 function boxClicked(event){
 
-	console.log(event)
+  console.log(event)
 
-	 var button = event.target;
-	
+   var button = event.target;
+  
 
-	 var input = button.innerHTML;
+   var input = button.innerHTML;
 
-	 var output = document.getElementById('results');
+   var output = document.getElementById('results');
 
 
   console.log(output);
      
-     	
+      
      switch(input) {
       case '+':
        console.log("its a addition!");
@@ -128,14 +128,14 @@ function boxClicked(event){
 
 function compute(number1,number2,operator){
 
-	var result = 0;
+  var result = 0;
 
 switch(operator) {
       case '+':
        console.log("its a addition!");
        num1 + num2;
        result = num1 + num2;
- 		return result;      
+    return result;      
       case '-':
         console.log('subtract')
         result = num1 - num2;
@@ -185,9 +185,6 @@ switch(operator) {
 }
      
  
-
-
-
 
 
 
